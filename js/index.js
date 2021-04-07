@@ -101,11 +101,11 @@ const img1 = makeBig[0]
 const navBar = document.querySelector("nav")
 
 
-document.addEventListener("resize", (event) => {
-    if(navBar.style.width > 200){
-        navBar.style.border = "3px solid black"
-    }
-});
+// document.addEventListener("resize", (event) => {
+//     if(navBar.style.width > 200){
+//         navBar.style.border = "3px solid black"
+//     }
+// });
   
 const signButton = document.querySelectorAll(".btn");
 const button1 = signButton[0];
@@ -116,9 +116,6 @@ button1.addEventListener("mouseenter", (event) => {
     event.target.style.background = "orange";
     event.target.style.color = "blue";
     event.target.textContent = "Good Choice!"
-    button2.addEventListener("blur", (event) => {
-        button2.textContent = " ";
-    });
 });
 
 button1.addEventListener("mouseleave", (event) => {
@@ -126,3 +123,16 @@ button1.addEventListener("mouseleave", (event) => {
     event.target.style.color = "white";
     event.target.textContent = "Sign Me Up!";
 });
+
+Array.from(document.links).forEach(function (link){
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+    });
+});
+
+
+document.body.addEventListener("click", (event) => console.log("howdy"));
+document.addEventListener("click", (event) => console.log("howdy"));
+contactButton.addEventListener("click", (event) => event.stopPropagation());
+contactButton.addEventListener("click", (event) => console.log("howdy"));
+
