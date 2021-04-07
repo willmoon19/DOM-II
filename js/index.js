@@ -94,7 +94,6 @@ document.addEventListener("dblclick", (event) => {
         document.style.height *= 2;
     }
 })
-    // const signButton = document.querySelectorAll(".destination");
 
     // const input = document.createElement("input");
 
@@ -108,3 +107,22 @@ document.addEventListener("resize", (event) => {
     }
 });
   
+const signButton = document.querySelectorAll(".btn");
+const button1 = signButton[0];
+const button2 = signButton[1];
+const button3 = signButton[2];
+
+button1.addEventListener("mouseenter", (event) => {
+    event.target.style.background = "orange";
+    event.target.style.color = "blue";
+    event.target.textContent = "Good Choice!"
+    button2.addEventListener("blur", (event) => {
+        button2.textContent = " ";
+    });
+});
+
+button1.addEventListener("mouseleave", (event) => {
+    event.target.style.background = "blue";
+    event.target.style.color = "white";
+    event.target.textContent = "Sign Me Up!";
+});
